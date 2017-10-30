@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title> Dictionary</title>
+</head>
+<body>
+      <h1>Definition</h1>
+      <br>
+      <button type="button" onclick="Search()" id = "request">Search</button>
+          <script> 
+          function Search(){
+          var xhttp = new XMLHttpRequest();
+          var url = "https://info2180lab6-markey.c9users.io/request.php?q=definition";
+          xhttp.onreadystatechange = function(){
+                  if(this.readyState == 4 && this.status === 200){
+                  document.getElementById("request").innerHTML= this.responseText;
+                  alert(this.responseText)
+              }
+          }
+          xhttp.open("GET",url );
+          xhttp.send();
+          }
+          </script>
+          
+        
+</body>
+</html>

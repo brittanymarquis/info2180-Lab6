@@ -2,26 +2,33 @@
 <html>
 <head>
       <title> Dictionary</title>
+        <script src="search.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        
 </head>
 <body>
-      <h1>Definition</h1>
-      <br>
-      <button type="button" onclick="Search()" id = "request">Search</button>
-          <script> 
-          function Search(){
-          var xhttp = new XMLHttpRequest();
-          var url = "https://info2180lab6-markey.c9users.io/request.php?q=definition";
-          xhttp.onreadystatechange = function(){
-                  if(this.readyState == 4 && this.status === 200){
-                  document.getElementById("request").innerHTML= this.responseText;
-                  alert(this.responseText)
-              }
-          }
-          xhttp.open("GET",url );
-          xhttp.send();
-          }
-          </script>
-          
+      <div id="everything">
+        <div id="heading"> Web Dictionary</div>
+        <div id="main">
+            <h4>Search the meaning of a word</h4>
+            <span class="ex">eg. Definition,  ajax,  bar,  html,  css,  javascript,  php</span>
+            <br>
+            <form id="formSearch">
+                <input type="text" name="q" placeholder="Eg. bar" id="searchBar"/>
+                <button type="Button" onclick="Search()" id="submission">Search</button>
+               
+            </form>
+            <hr>
+            
+                <span>Result</span>
+                <div id="result">
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
         
 </body>
 </html>
